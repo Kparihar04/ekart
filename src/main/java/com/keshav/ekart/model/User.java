@@ -24,7 +24,7 @@ public class User {
     @NotNull
     @Size(min=3, max=50)
     @Column(name = "user_name")
-    private String name;
+    private String userName;
 
     @Email
     @NotNull

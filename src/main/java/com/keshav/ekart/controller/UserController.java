@@ -48,7 +48,7 @@ public class UserController {
         return new ResponseEntity<>(newUser,HttpStatus.CREATED);
     }
 
-    @PutMapping("users/{id}/update")
+    @PutMapping("users/{id}")
     public ResponseEntity<User> updateUserDetails(@PathVariable Long id, @RequestBody User user) {
         if(service.getUserById(id) == null)
             return ResponseEntity.notFound().build();
@@ -57,7 +57,7 @@ public class UserController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    @DeleteMapping("users/delete/{id}")
+    @DeleteMapping("users/{id}")
     public String deleteUserbyId(@PathVariable Long id){
         if(!service.getUserById(id).isPresent())
             return "User with Id "+ id + " is not avaialble";

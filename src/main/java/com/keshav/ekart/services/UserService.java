@@ -29,7 +29,7 @@ public class UserService {
     
     public User updateUserDetails(Long id, User newUser) {
         User user = repo.findById(id).orElse(null);
-        user.setName(newUser.getName());
+        user.setUserName(newUser.getUserName());
         user.setAddress(newUser.getAddress());
         user.setIsAdmin(newUser.getIsAdmin());
         user.setEmail(newUser.getEmail());
